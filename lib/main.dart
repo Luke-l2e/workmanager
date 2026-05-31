@@ -18,7 +18,7 @@ void callbackDispatcher() {
     final elapsed = requestedAt == null ? null : finishedAt.difference(requestedAt);
 
     await DemoLogStorage.appendEvent(
-      elapsed == null ? 'Ran at ${DemoLogStorage.formatTime(finishedAt)}.' : 'Ran ~${elapsed.inSeconds} seconds.',
+      elapsed == null ? 'Ran at ${DemoLogStorage.formatTime(finishedAt)}.' : '${DemoLogStorage.formatTime(requestedAt!)} ran after ${elapsed.inSeconds}s.',
       source: 'WorkManager',
     );
     return true;
