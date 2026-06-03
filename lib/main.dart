@@ -131,10 +131,8 @@ class _DemoHomePageState extends State<DemoHomePage> {
     });
 
     try {
-      final uniqueWorkName = '$_demoUniqueName-${_uuid.v4()}';
-
       await Workmanager().registerOneOffTask(
-        uniqueWorkName,
+        _uuid.v4(),
         _demoTaskName,
         initialDelay: const Duration(seconds: 10),
         existingWorkPolicy: ExistingWorkPolicy.replace,
